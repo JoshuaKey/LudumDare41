@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour {
         White,
         Gold,
     }
+    [SerializeField] private AudioClip attackSound;
 
     private Health m_health;
     private LevelSystem m_levelSystem;
@@ -141,8 +142,9 @@ public class Enemy : MonoBehaviour {
             }
 
 
-            if (Mathf.Abs(dist.x) < attackLength) {
+            if (Mathf.Abs(dist.x) < attackLength && Mathf.Abs(dist.y) < 1f) {
                 m_anim.SetTrigger("Attack");
+                //AudioManager.Instance.PlaySound(attackSound);
                 nextAttackTime = Time.time + attackTime;
             }
         }
@@ -159,6 +161,8 @@ public class Enemy : MonoBehaviour {
         if (hit) {
             PlayerController.Instance.health.TakeDamage(damage);
         }
+
+        AudioManager.Instance.PlaySound(attackSound);
     }
 
     public static Color GetColor(SlimeType type) {

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KeyGate : MonoBehaviour {
-
     [SerializeField] private GameObject[] associations;
 
     // A gate is an obstacle that will open up after some condition has been met
@@ -18,9 +17,11 @@ public class KeyGate : MonoBehaviour {
 
     public void Remove() {
         // Annimations and crap...
-        this.gameObject.SetActive(false);
         for (int i = 0; i < associations.Length; i++) {
             associations[i].SetActive(false);
         }
+        AudioManager.Instance.PlaySound(AudioManager.Instance.openSound);
+        this.gameObject.SetActive(false);
+        Destroy(this);
     }
 }

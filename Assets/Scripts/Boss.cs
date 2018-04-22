@@ -4,27 +4,10 @@ using UnityEngine;
 
 public class Boss : Enemy {
 
-    //public enum SlimeType {
-    //    Green,
-    //    Red,
-    //    Blue,
-    //    Purple,
-    //    Black,
-    //    White,
-    //    Gold,
-    //}
-
-    //private Health m_health;
-    //private LevelSystem m_levelSystem;
-    //private SpriteRenderer m_renderer;
-
-    //public SlimeType m_slimeType;
-
-    //public Health health { get { return m_health; } }
-    //public LevelSystem levelSystem { get { return m_levelSystem; } }
-
     public int level;
     public SlimeType[] types;
+    public VictoryUI victoryUI;
+    public GameObject gate;
 
     private int percentIndex = 0;
 
@@ -44,6 +27,9 @@ public class Boss : Enemy {
             this.Initialize(types[percentIndex], level);
         } else {
             // Victory
+            this.gameObject.SetActive(false);
+            gate.SetActive(false);
+            victoryUI.gameObject.SetActive(true);
         }
         
     }

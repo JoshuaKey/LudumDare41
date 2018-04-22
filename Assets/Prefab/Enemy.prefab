@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc15b996e720156459df755152463c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: 969b8bada7f43224faf47cf352dbea3b, type: 3}
   m_slimeType: 0
   speed: 5
   damage: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   attackTime: 0
   nextAttackTime: 0
   isChasing: 0
+  isFacingRight: 0
 --- !u!114 &114202250406366000
 MonoBehaviour:
   m_ObjectHideFlags: 1

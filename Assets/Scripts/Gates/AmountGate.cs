@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AmountGate : MonoBehaviour {
-
     [SerializeField] private int enemiesKilled = 5;
     [SerializeField] private bool hasType = false;
     [SerializeField] private Enemy.SlimeType type;
@@ -57,5 +56,6 @@ public class AmountGate : MonoBehaviour {
         for(int i = 0; i < associations.Length; i++) {
             associations[i].SetActive(false);
         }
+        AudioManager.Instance.PlaySound(AudioManager.Instance.openSound);
     }
 }

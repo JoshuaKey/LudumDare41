@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DeathGate : MonoBehaviour {
-
     [SerializeField] private int playerDeath = 1;
     [SerializeField] private GameObject[] associations;
 
@@ -23,5 +22,6 @@ public class DeathGate : MonoBehaviour {
         for (int i = 0; i < associations.Length; i++) {
             associations[i].SetActive(false);
         }
+        AudioManager.Instance.PlaySound(AudioManager.Instance.openSound);
     }
 }

@@ -23,5 +23,6 @@ public class LevelGate : MonoBehaviour {
         for (int i = 0; i < associations.Length; i++) {
             associations[i].SetActive(false);
         }
+        AudioManager.Instance.PlaySound(AudioManager.Instance.openSound);
     }
 }

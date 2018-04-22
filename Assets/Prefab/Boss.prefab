@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 61345620766553224}
   - component: {fileID: 50873273130568342}
   - component: {fileID: 114274079136786452}
+  - component: {fileID: 95184202187303730}
   m_Layer: 9
   m_Name: Boss
   m_TagString: Untagged
@@ -90,6 +91,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
+--- !u!95 &95184202187303730
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1833171485508574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c9b17e3bd9277343b7482452c27ec28, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114274079136786452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,9 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a1128907b59bc4aa206370146a8b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: 969b8bada7f43224faf47cf352dbea3b, type: 3}
   m_slimeType: 0
+  speed: 5
+  damage: 0
+  attackLength: 0
+  attackTime: 0
+  nextAttackTime: 0
+  isChasing: 0
+  isFacingRight: 0
   level: 0
   types: 0000000006000000010000000400000005000000030000000200000006000000000000000100000002000000030000000500000004000000
+  victoryUI: {fileID: 0}
 --- !u!114 &114385958601435218
 MonoBehaviour:
   m_ObjectHideFlags: 1

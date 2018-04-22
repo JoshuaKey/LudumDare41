@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
     public float nextAttackTime;
     public bool canAttack = true;
 
+    [SerializeField] private AudioClip attackSound;
+
     private Rigidbody2D m_rb;
     private Collider2D m_collider;
     private SpriteRenderer m_renderer;
@@ -65,7 +67,6 @@ public class PlayerController : MonoBehaviour {
             Vector2 mvmt = Vector2.zero;
             mvmt.x = Input.GetAxisRaw("Horizontal");
             if (canClimb) {
-                print("Here");
                 mvmt.y = Input.GetAxisRaw("Vertical");
                 
                 if(mvmt.y > 0) {
@@ -123,6 +124,7 @@ public class PlayerController : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextAttackTime) {
                     Attack();
                     m_anim.SetTrigger("Attack");
+                    AudioManager.Instance.PlaySound(attackSound);
                 }
             }
         }
